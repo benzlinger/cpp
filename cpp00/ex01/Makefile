@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/05 15:20:20 by btenzlin          #+#    #+#              #
-#    Updated: 2022/09/05 18:21:55 by btenzlin         ###   ########.fr        #
+#    Created: 2022/09/05 18:21:03 by btenzlin          #+#    #+#              #
+#    Updated: 2022/09/05 18:22:05 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-SRC = megaphone.cpp
-OBJ = megaphone.o
+SRC = 
+OBJ = 
 
 all: $(NAME)
 
