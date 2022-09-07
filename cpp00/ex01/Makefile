@@ -6,7 +6,7 @@
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 18:21:03 by btenzlin          #+#    #+#              #
-#    Updated: 2022/09/05 18:57:33 by btenzlin         ###   ########.fr        #
+#    Updated: 2022/09/06 19:18:09 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ RM = rm -rf
 
 SRC = phonebook.cpp \
 		contact.cpp
+
 OBJ = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(SRC))
 
 all: $(NAME)
