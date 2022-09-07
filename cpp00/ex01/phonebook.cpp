@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:58:52 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/07 14:19:20 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:27:04 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	PhoneBook::set_infos(Contact contact)
 
 	std::cout << "Enter first name: ";
 	std::cin >> buf;
-	if (buf.length > 0)
+	if (buf.size() > 0)
 		contact.set_first_name(buf);
 }

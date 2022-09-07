@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:21:01 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/07 14:15:37 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:29:24 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 		{
 			phonebook.set_infos(contacts[index]);
 			index++;
-			if (index == 7)
+			if (index == 8)
 				index = 0;
 		}
 		else if (!buf.compare("SEARCH"))
