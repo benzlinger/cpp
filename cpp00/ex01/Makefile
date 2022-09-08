@@ -6,12 +6,15 @@ G = "\033[32m"
 B = "\033[34m"
 X = "\033[0m"
 # EXECUTABLE
-NAME = phonebook
+NAME = ./phonebook
 # PATHS
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
 # SOURCES
-SRC =   *.cpp
+SRC =	$(SRC_PATH)contact.cpp \
+		$(SRC_PATH)phonebook.cpp \
+		$(SRC_PATH)main.cpp
+
 # OBJECTS
 OBJ = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(SRC))
 # RULES
@@ -34,14 +37,14 @@ clean:
 			rm -f -r $(OBJ_PATH); \
 			echo $(R)Cleaning" "[$(OBJ) $(OBJ_PATH)]...$(X); else \
 			echo "No objects to remove."; \
-    fi;
+	fi;
 
 fclean: clean
-    @if [ -f "$(NAME)" ]; then \
-            rm -f $(NAME); \
-            echo $(R)Cleaning" "[$(NAME)]...$(X);else \
-            echo "No executable to remove."; \
-    fi;
+	@if [ -f "$(NAME)" ]; then \
+			rm -f $(NAME); \
+			echo $(R)Cleaning" "[$(NAME)]...$(X);else \
+			echo "No executable to remove."; \
+	fi;
 
 re: fclean all
 
