@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:21:01 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/12 17:17:36 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/12 17:40:02 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(void)
 	while(buf.compare("EXIT"))
 	{
 		std::cout << "Please enter a command: ";
-		getline(std::cin, buf);
+		if (!(getline(std::cin, buf)))
+			return (0);
 		if (!buf.compare("ADD"))
 			phonebook.set_infos();
 		else if (!buf.compare("SEARCH"))

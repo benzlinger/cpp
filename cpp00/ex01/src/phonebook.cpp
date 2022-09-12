@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:58:52 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/12 17:32:28 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:00:33 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ std::string	PhoneBook::get_info(std::string prompt)
 {
 	std::string	buf;
 
-	while (buf.size() == 0)
+	while (buf.empty())
 	{
 		std::cout << prompt;
-		getline(std::cin, buf);
+		if (!getline(std::cin, buf))
+			exit (0);
 	}
 	return (buf);
 }
@@ -96,7 +97,10 @@ void	PhoneBook::show_contacts(void)
 		while (input < 1 || input > this->_amount_contacts)
 		{
 			std::cout << "Choose contact by entering corresponding index: ";
-			getline(std::cin, buf);
+			if (!getline(std::cin, buf))
+				exit (0);
+			else if (buf.empty())
+				continue ;
 			input = atoi(buf.c_str());
 			show_contact_info(input);
 		}
