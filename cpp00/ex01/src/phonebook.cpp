@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:58:52 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/12 17:04:17 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/12 17:32:28 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void	PhoneBook::show_contact_info(int index)
 {
 	if (index > 0 && index <= this->_amount_contacts)
 	{
-		std::cout << "Index: " << std::to_string(index) << std::endl;
-		std::cout << "First name: " << this->contacts[index - 1].get_first_name() << std::endl;
-		std::cout << "Last name: " << this->contacts[index - 1].get_last_name() << std::endl;
-		std::cout << "Nickname: " << this->contacts[index - 1].get_nickname() << std::endl;
-		std::cout << "Phone number : " << this->contacts[index - 1].get_phone_number() << std::endl;
+		std::cout << "Index:          " << std::to_string(index) << std::endl;
+		std::cout << "First name:     " << this->contacts[index - 1].get_first_name() << std::endl;
+		std::cout << "Last name:      " << this->contacts[index - 1].get_last_name() << std::endl;
+		std::cout << "Nickname:       " << this->contacts[index - 1].get_nickname() << std::endl;
+		std::cout << "Phone number :  " << this->contacts[index - 1].get_phone_number() << std::endl;
 		std::cout << "Darkest secret: " << this->contacts[index - 1].get_secret() << std::endl;
 	}
 	else
