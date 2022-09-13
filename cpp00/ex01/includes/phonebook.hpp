@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:45:53 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/09 13:53:10 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/13 12:16:42 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 
 private:
 
-	Contact		contacts[8];
+	Contact		_contacts[8];
 	int			_index;
 	int			_amount_contacts;
 
