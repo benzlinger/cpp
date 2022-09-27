@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:13:25 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/27 13:02:15 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:14:20 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,26 @@ void	Harl::error(void)
 
 void	Harl::complain(std:: string level)
 {
-	levelfunction	functions[4];
 	std::string		levels[4];
+	int				i = 0;
 
-	functions[0] = &Harl::debug;
-	functions[1] = &Harl::info;
-	functions[2] = &Harl::warning;
-	functions[3] = &Harl::error;
-	levels[0] = "debug";
-	levels[1] = "info";
-	levels[2] = "warning";
-	levels[3] = "error";
-	for (int i = 0; i < 4; i++)
-	{
-		if (!levels[i].compare(level))
-			(this->*functions[i])();
+	levels[0] = "DEBUG";
+	levels[1] = "INFO";
+	levels[2] = "WARNING";
+	levels[3] = "ERROR";
+	while (level.compare(levels[i]) && i < 4)
+		i++;
+	switch (i) {
+		case 0:
+			debug();
+		case 1:
+			info();
+		case 2:
+			warning();
+		case 3:
+			error();
+			break;
+		default:
+			std::cout << "Error: invalid input." << std::endl;
 	}
 }

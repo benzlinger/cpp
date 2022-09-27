@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:13:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/27 13:54:23 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:12:30 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		Harl	harl;
-		levels[0] = "DEBUG";
-		levels[1] = "INFO";
-		levels[2] = "WARNING";
-		levels[3] = "ERROR";
-		while (std::string(argv[1]).compare(levels[i]) && i < 4)
-			i++;
-		switch (i) {
-			case 0:
-				harl.complain("debug");
-			case 1:
-				harl.complain("info");
-			case 2:
-				harl.complain("warning");
-			case 3:
-				harl.complain("error");
-				break;
-			default:
-				std::cout << "Error: invalid input." << std::endl;
-		}
+		harl.complain(argv[1]);
 	}
 	return (0);
 }
