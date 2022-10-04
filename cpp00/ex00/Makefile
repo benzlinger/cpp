@@ -1,33 +1,50 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/05 15:20:20 by btenzlin          #+#    #+#              #
-#    Updated: 2022/09/05 18:21:55 by btenzlin         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+# COLORS
+Y = "\033[33m"
+R = "\033[31m"
+G = "\033[32m"
+B = "\033[34m"
+X = "\033[0m"
+# EXECUTABLE
+NAME = ./megaphone
+# PATHS
+SRC_PATH = 
+OBJ_PATH = ./obj/
+# SOURCES
+SRC =	$(SRC_PATH)megaphone.cpp
 
-NAME = megaphone
-
-CC = c++
-FLAGS = -Wall -Wextra -Werror
-RM = rm -rf
-
-SRC = megaphone.cpp
-OBJ = megaphone.o
-
+# OBJECTS
+OBJ = $(patsubst $(SRC_PATH)%.c, $(OBJ_PATH)%.o, $(SRC))
+# RULES
 all: $(NAME)
 
+$(OBJ_PATH)%.o :$(SRC_PATH)%.c
+	@echo $(Y)Compiling [$@]...$(X)
+	@mkdir -p $(dir $@)
+	@c++ $(CFLAGS) -c -o $@ $<
+	@echo $(G)Finished [$@]$(X)
+
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	@echo $(Y)Compiling [$(SRC)]
+	@echo into [$(NAME)]...$(X)
+	@c++ $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo $(G)Finished [$(NAME)]$(X)
 
 clean:
-	$(RM) $(OBJ)
+	@if [ -d "$(OBJ_PATH)" ]; then \
+			rm -f -r $(OBJ_PATH); \
+			echo $(R)Cleaning" "[$(OBJ) $(OBJ_PATH)]...$(X); else \
+			echo "No objects to remove."; \
+	fi;
 
 fclean: clean
-	$(RM) $(NAME)
+	@if [ -f "$(NAME)" ]; then \
+			rm -f $(NAME); \
+			echo $(R)Cleaning" "[$(NAME)]...$(X);else \
+			echo "No executable to remove."; \
+	fi;
 
 re: fclean all
+
+# ADDITIONAL RULES
+.PHONY: all, clean, fclean, re, norm

@@ -11,8 +11,8 @@ NAME = ./phonebook
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
 # SOURCES
-SRC =	$(SRC_PATH)contact.cpp \
-		$(SRC_PATH)phonebook.cpp \
+SRC =	$(SRC_PATH)Contact.cpp \
+		$(SRC_PATH)PhoneBook.cpp \
 		$(SRC_PATH)main.cpp
 
 # OBJECTS

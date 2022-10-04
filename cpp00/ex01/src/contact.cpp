@@ -6,11 +6,11 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 16:05:13 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/07 17:40:42 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:31:57 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/contact.hpp"
+#include "../includes/Contact.hpp"
 
 Contact::Contact(void){}
 Contact::~Contact(void){}

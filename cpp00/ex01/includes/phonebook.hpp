@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:45:53 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/13 12:16:42 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:32:20 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
-# include "contact.hpp"
+# include "Contact.hpp"
 
 class PhoneBook {
 

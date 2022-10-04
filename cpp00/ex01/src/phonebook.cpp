@@ -6,12 +6,12 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:58:52 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/13 12:17:13 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 09:31:53 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/phonebook.hpp"
-#include "../includes/contact.hpp"
+#include "../includes/PhoneBook.hpp"
+#include "../includes/Contact.hpp"
 
 PhoneBook::PhoneBook(void) : _index(0), _amount_contacts(0) {}
 PhoneBook::~PhoneBook(void){}
