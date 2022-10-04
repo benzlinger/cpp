@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:13:13 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/26 12:50:07 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:14:23 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ Weapon::~Weapon(void)
 	std::cout << "Weapon Destructor called." << std::endl;
 }
 
-std::string	Weapon::getType(void)
+const std::string	&Weapon::getType(void)
 {
-	return (this->type);
+	return (_type);
 }
 
 void	Weapon::setType(std::string type)
 {
-	this->type = type;
+	_type = type;
 }

@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:10:44 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/19 15:22:19 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:11:50 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ public:
 	Weapon(std::string type);
 	~Weapon(void);
 
-	std::string	getType(void);
-	void		setType(std::string type);
+	const std::string	&getType(void);
+	void				setType(std::string type);
 
 private:
 
-	std::string	type;
+	std::string	_type;
 };
 
 #endif
