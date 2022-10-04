@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:13:25 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/09/27 14:14:20 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:18:27 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,26 @@ Harl::~Harl(void)
 
 void	Harl::debug(void)
 {
-	std::cout << DEBUG << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << DEBUG << std::endl << std::endl;
 }
 
 void	Harl::info(void)
 {
-	std::cout << INFO << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << INFO << std::endl << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << WARNING << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << WARNING << std::endl << std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout << ERROR << std::endl;
+	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << ERROR << std::endl << std::endl;
 }
 
 void	Harl::complain(std:: string level)
@@ -64,6 +68,6 @@ void	Harl::complain(std:: string level)
 			error();
 			break;
 		default:
-			std::cout << "Error: invalid input." << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
