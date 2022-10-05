@@ -6,11 +6,11 @@
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 12:21:11 by btenzlin          #+#    #+#              #
-#    Updated: 2022/09/29 18:32:36 by btenzlin         ###   ########.fr        #
+#    Updated: 2022/10/05 16:04:16 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = #-Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 # COLORS
 Y = "\033[33m"
 R = "\033[31m"

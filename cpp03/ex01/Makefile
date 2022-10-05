@@ -6,7 +6,7 @@
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 12:21:11 by btenzlin          #+#    #+#              #
-#    Updated: 2022/10/05 16:03:28 by btenzlin         ###   ########.fr        #
+#    Updated: 2022/10/05 16:03:11 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC_PATH = ./src/
 OBJ_PATH = ./obj/
 # SOURCES
 SRC =	$(SRC_PATH)ClapTrap.cpp \
+		$(SRC_PATH)ScavTrap.cpp \
 		$(SRC_PATH)main.cpp
 
 # OBJECTS
