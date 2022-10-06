@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:21:31 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/03 14:47:22 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/06 12:56:49 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Point::~Point(void)
 Point	&Point::operator=(Point const &other)
 {
 	// std::cout << "Copy assignment operator called" << std::endl;
+	(void)other;
 	return (*this);
 }
 
