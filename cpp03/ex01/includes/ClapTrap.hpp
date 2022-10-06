@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:45:42 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/05 16:08:05 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/06 15:29:20 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ protected:
 	int			_hp;
 	int			_ep;
 	int			_dmg;
+	int			_max_hp;
 
 };
 

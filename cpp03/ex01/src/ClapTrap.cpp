@@ -6,18 +6,18 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:45:31 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/05 16:33:34 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/06 15:31:07 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("nobody"), _hp(10), _ep(10), _dmg(0)
+ClapTrap::ClapTrap(void) : _name("nobody"), _hp(10), _ep(10), _dmg(0), _max_hp(10)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _dmg(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _dmg(0), _max_hp(10)
 {
 	std::cout << "ClapTrap string constructor called" << std::endl;
 }
@@ -41,6 +41,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &other)
 		this->_hp = other._hp;
 		this->_ep = other._ep;
 		this->_dmg = other._dmg;
+		this->_max_hp = other._max_hp;
 	}
 	return (*this);
 }
@@ -91,7 +92,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 	if (_ep > 0 && _hp > 0)
 	{
-		while (amount > 0 && _hp < 10)
+		while (amount > 0 && _hp < _max_hp)
 		{
 			_hp++;
 			amount--;
