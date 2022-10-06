@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:02:11 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 15:30:50 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:08:33 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ void	ScavTrap::guardGate(void)
 	}
 	else if (_hp > 0)
 	{
-		std::cout << "ClapTrap " << _name
+		std::cout << "ScavTrap " << _name
 		<< " has no more energy points to attack." << std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name
+		std::cout << "ScavTrap " << _name
 		<< " has no more hit points to attack." << std::endl;
 	}
 }
