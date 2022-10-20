@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:56:06 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 16:20:52 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:25:03 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main(void)
 {
 	{
-		std::cout << std::endl << "CORRECT TESTS:" << std::endl;
+		std::cout << "CORRECT TESTS:" << std::endl;
 		const Animal	*animal = new Animal();
 		const Animal	*dog = new Dog();
 		const Animal	*cat = new Cat();
