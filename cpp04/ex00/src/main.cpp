@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:56:06 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 16:09:28 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:20:52 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ int	main(void)
 		dog->makeSound();
 		std::cout << "Cat: ";
 		cat->makeSound();
+
+		std::cout << std::endl;
+		delete animal;
+		delete dog;
+		delete cat;
 	}
 
 
@@ -51,6 +56,10 @@ int	main(void)
 		wronganimal->makeSound();
 		std::cout << "Wrong cat: ";
 		wrongcat->makeSound();
+
+		std::cout << std::endl;
+		delete wronganimal;
+		delete wrongcat;
 	}
 
 	return (0);

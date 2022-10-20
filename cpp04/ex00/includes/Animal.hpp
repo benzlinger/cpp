@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:42:57 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 15:43:23 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:19:31 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 
 	Animal(void);
 	Animal(const Animal &other);
-	~Animal(void);
+	virtual ~Animal(void);
 
 	Animal			&operator=(const Animal &other);
 
