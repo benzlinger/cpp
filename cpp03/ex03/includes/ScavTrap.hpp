@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:07:20 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 15:27:52 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:59:27 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap {
+class	ScavTrap : public virtual ClapTrap {
 
 public:
 
