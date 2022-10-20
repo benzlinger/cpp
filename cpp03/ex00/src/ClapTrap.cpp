@@ -6,13 +6,13 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:45:31 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/05 12:59:55 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:46:57 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("Nobody"), _hp(10), _ep(10), _dmg(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }

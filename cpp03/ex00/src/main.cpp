@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:45:09 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/05 13:04:15 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:48:54 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(void)
 	bert.attack("Bella");
 	bob.attack("Bella");
 	bob.takeDamage(20);
+	bob.takeDamage(10);
 	return (0);
 }
