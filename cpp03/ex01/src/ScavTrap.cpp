@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:02:11 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 11:00:14 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:23:38 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &other)
 {
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -44,6 +45,7 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 {
+	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
