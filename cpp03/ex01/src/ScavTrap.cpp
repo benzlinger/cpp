@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:02:11 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 16:08:33 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:00:14 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
+	this->_name = "Nobody";
 	this->_hp = 100;
 	this->_ep = 50;
 	this->_dmg = 20;
@@ -23,7 +24,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << "ScavTrap string constructor called" << std::endl;
 	this->_name = name;
 	this->_hp = 100;
 	this->_ep = 50;
@@ -85,11 +86,11 @@ void	ScavTrap::guardGate(void)
 	else if (_hp > 0)
 	{
 		std::cout << "ScavTrap " << _name
-		<< " has no more energy points to attack." << std::endl;
+		<< " has no more energy points to guard the gate." << std::endl;
 	}
 	else
 	{
 		std::cout << "ScavTrap " << _name
-		<< " has no more hit points to attack." << std::endl;
+		<< " has no more hit points to guard the gate." << std::endl;
 	}
 }
