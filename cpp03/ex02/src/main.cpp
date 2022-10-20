@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:45:09 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 16:13:14 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:30:47 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	main(void)
 	bella.takeDamage(25);
 	bob.attack("Mirko");
 	bert.guardGate();
-	bella.highFiveGuys();
+	bella.highFivesGuys();
+	bella.takeDamage(75);
+	bella.highFivesGuys();
 }

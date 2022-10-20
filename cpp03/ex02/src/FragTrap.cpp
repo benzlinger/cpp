@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:42:39 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 16:09:18 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:19:57 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 FragTrap::FragTrap(void)
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
+	this->_name = "Nobody";
 	this->_hp = 100;
 	this->_ep = 100;
 	this->_dmg = 30;
@@ -44,6 +45,7 @@ FragTrap::~FragTrap(void)
 
 FragTrap	&FragTrap::operator=(const FragTrap &other)
 {
+	std::cout << "FragTrap copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -55,7 +57,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &other)
 	return (*this);
 }
 
-void	FragTrap::highFiveGuys(void)
+void	FragTrap::highFivesGuys(void)
 {
 	if (_ep > 0 && _hp > 0)
 	{
@@ -66,11 +68,11 @@ void	FragTrap::highFiveGuys(void)
 	else if (_hp > 0)
 	{
 		std::cout << "FragTrap " << _name
-		<< " has no more energy points to attack." << std::endl;
+		<< " has no more energy points to high five." << std::endl;
 	}
 	else
 	{
 		std::cout << "FragTrap " << _name
-		<< " has no more hit points to attack." << std::endl;
+		<< " has no more hit points to high five." << std::endl;
 	}
 }

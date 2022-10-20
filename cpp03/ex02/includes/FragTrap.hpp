@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:39:47 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/06 16:15:05 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:13:00 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	FragTrap	&operator=(const FragTrap &other);
 
-	void		highFiveGuys(void);
+	void		highFivesGuys(void);
 
 private:
 
