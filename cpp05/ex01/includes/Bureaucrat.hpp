@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:47 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/22 15:50:11 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:32:47 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ public:
 
 	class GradeTooLowException : public std::exception {
 		const char	*what() const throw() { return ("Grade too low"); }
+	};
+
+	class InvalidGradeException : public std::exception {
+		const char	*what() const throw() { return ("Bureaucrat invalid"); }
 	};
 
 private:

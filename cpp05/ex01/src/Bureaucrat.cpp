@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:21:34 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/22 15:22:24 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:32:12 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,16 @@ Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150)
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 	std::cout << "Bureaucrat constructor called" << std::endl;
-	_grade = grade;
-	if (grade < 1)
-		throw GradeTooHighException();
-	else if (grade > 150)
-		throw GradeTooLowException();
+	try {
+		if (grade < 1)
+			throw GradeTooHighException();
+		else if (grade > 150)
+			throw GradeTooLowException();
+		_grade = grade;
+	} catch (std::exception &e) {
+			_grade = 0;
+			std::cout << "Exception caught: " << e.what() << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())
@@ -47,31 +52,42 @@ Bureaucrat		&Bureaucrat::operator=(const Bureaucrat &other)
 
 void			Bureaucrat::signForm(Form &form)
 {
-	try {
-		form.beSigned(*this);
-	} catch (std::exception &e) {
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
+	form.beSigned(*this);
+	if (!form.getIsSigned())
+		std::cout << this->getName() << " couldn't sign " << form.getName()
+		<< " because their grade is too low." << std::endl;
 }
 
 void			Bureaucrat::incrementGrade(void)
 {
-	if (_grade - 1 < 1)
-		throw GradeTooHighException();
-	std::cout << getName() << ", grade incrementet from: " << getGrade()
-	<< " to: ";
-	_grade--;
-	std::cout << _grade << "." << std::endl;
+	try {
+		if (!_grade)
+			throw InvalidGradeException();
+		if (_grade - 1 < 1)
+			throw GradeTooHighException();
+		std::cout << getName() << ", grade incrementet from: " << getGrade()
+		<< " to: ";
+		_grade--;
+		std::cout << _grade << "." << std::endl;
+	} catch (std::exception &e) {
+			std::cout << "Exception caught: " << e.what() << std::endl;
+	}
 }
 
 void			Bureaucrat::decrementGrade(void)
 {
-	if (_grade + 1 > 150)
-		throw GradeTooLowException();
-	std::cout << getName() << ", grade decrementet from: " << getGrade()
-	<< " to: ";
-	_grade++;
-	std::cout << _grade << "." << std::endl;
+	try {
+		if (!_grade)
+			throw InvalidGradeException();
+		if (_grade + 1 > 150)
+			throw GradeTooLowException();
+		std::cout << getName() << ", grade decrementet from: " << getGrade()
+		<< " to: ";
+		_grade++;
+		std::cout << _grade << "." << std::endl;
+	} catch (std::exception &e) {
+			std::cout << "Exception caught: " << e.what() << std::endl;
+	}
 }
 
 std::string		Bureaucrat::getName(void) const

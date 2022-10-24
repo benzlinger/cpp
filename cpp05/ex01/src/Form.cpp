@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:34:18 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/22 14:54:46 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:28:31 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ Form::Form(std::string name, int signGrade, int execGrade)
 : _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
 	std::cout << "Form constructor called" << std::endl;
-	if (_signGrade < 1 || _execGrade < 1)
-		throw GradeTooHighException();
-	else if (_signGrade > 150 || _execGrade > 150)
-		throw GradeTooLowException();
+	try {
+		if (_signGrade < 1 || _execGrade < 1)
+			throw GradeTooHighException();
+		else if (_signGrade > 150 || _execGrade > 150)
+			throw GradeTooLowException();
+	} catch (std::exception &e) {
+		std::cout << "Exception caught: " << e.what() << std::endl;
+	}
 }
 
 Form::Form(const Form &other) : _name(other.getName()), _isSigned(other.getIsSigned())
@@ -48,14 +52,18 @@ Form		&Form::operator=(const Form &other)
 
 void		Form::beSigned(Bureaucrat &bureau)
 {
-	if (bureau.getGrade() <= this->getSignGrade())
-	{
+	try {
+		if (this->getIsSigned())
+			throw FormAlreadySignedException();
+		if (bureau.getGrade() > this->getSignGrade())
+			throw GradeTooLowException();
 		std::cout << bureau.getName() << " just signed the form: "
 		<< this->getName() << std::endl;
 		this->_isSigned = true;
+	} catch (std::exception &e) {
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
-	else
-		throw GradeTooLowException();
+	
 }
 
 std::string	Form::getName(void) const

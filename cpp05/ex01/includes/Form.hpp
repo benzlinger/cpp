@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:27:50 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/22 15:50:19 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:28:54 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ public:
 
 	class GradeTooLowException : public std::exception {
 		const char	*what() const throw() { return ("Grade too low"); }
+	};
+
+	class FormAlreadySignedException : public std::exception {
+		const char	*what() const throw() { return ("Form already signed"); }
 	};
 
 private:
