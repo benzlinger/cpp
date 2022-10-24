@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:21:34 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 17:40:41 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:28:09 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void			Bureaucrat::executeAForm(AForm &Aform)
 	else if (!Aform.getIsExecuted() && !Aform.getIsSigned())
 		std::cout << this->getName() << " couldn't execute " << Aform.getName()
 		<< " because the form is not signed." << std::endl;
+	else
+		std::cout << this->getName() << " executed " << Aform.getName() << std::endl;
 }
 
 void			Bureaucrat::incrementGrade(void)

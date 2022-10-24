@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:22 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 17:57:23 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:36:47 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,16 @@ int	main(void)
 		std::cout << "-------------------------------------" << std::endl << std::endl;
 		PresidentialPardonForm	form("Mirko");
 		Bureaucrat				bert("Bert", 1);
+		Bureaucrat				badBert("badBert", 10);
 
 		std::cout << std::endl << bert << std::endl;
 		std::cout << std::endl << form << std::endl;
 		bert.signAForm(form);
 		std::cout << std::endl << form << std::endl;
 		form.execute(bert);
+		std::cout << std::endl;
+		badBert.executeAForm(form);
+		std::cout << std::endl;
 	}
 		std::cout << "-------------------------------------" << std::endl << std::endl;
 	{
@@ -35,12 +39,18 @@ int	main(void)
 		std::cout << "-------------------------------------" << std::endl << std::endl;
 		RobotomyRequestForm	form("E45R");
 		Bureaucrat			bert("Bert", 30);
+		RobotomyRequestForm	uForm("E88T");
 
 		std::cout << std::endl << bert << std::endl;
 		std::cout << std::endl << form << std::endl;
 		bert.signAForm(form);
 		std::cout << std::endl << form << std::endl;
 		form.execute(bert);
+		std::cout << std::endl;
+		std::cout << uForm << std::endl;
+		std::cout << std::endl;
+		bert.executeAForm(uForm);
+		std::cout << std::endl;
 	}
 		std::cout << "-------------------------------------" << std::endl << std::endl;
 	{
@@ -48,12 +58,16 @@ int	main(void)
 		std::cout << "-------------------------------------" << std::endl << std::endl;
 		ShrubberyCreationForm	form("Home");
 		Bureaucrat				bert("Bert", 80);
+		Bureaucrat				badBert("badBert", 140);
 
 		std::cout << std::endl << bert << std::endl;
 		std::cout << std::endl << form << std::endl;
 		bert.signAForm(form);
 		std::cout << std::endl << form << std::endl;
 		form.execute(bert);
+		std::cout << std::endl;
+		badBert.executeAForm(form);
+		std::cout << std::endl;
 	}
 	std::cout << "-------------------------------------" << std::endl << std::endl;
 	return (0);
