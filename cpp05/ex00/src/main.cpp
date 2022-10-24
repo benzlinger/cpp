@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:22 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/22 14:17:04 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 10:39:44 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 int	main(void)
 {
-	try {
-		Bureaucrat	bert("Bert", -150);
+	{
+		std::cout << "DEFAULT BUREAUCRAT TESTING" << std::endl << std::endl;
+		Bureaucrat def;
 
-		std::cout << bert << std::endl;
-		bert.incrementGrade();
-		bert.decrementGrade();
-		bert.decrementGrade();
-		std::cout << bert << std::endl;
-	} catch (std::exception &e) {
-		std::cout << "Exception caught: " << e.what() << std::endl;
+		def.decrementGrade();
+		std::cout << def << std::endl;
 	}
+	{
+		std::cout << std::endl << "BERT TESTING" << std::endl <<std::endl;
+		Bureaucrat	bert("Bert", 1);
 
+		std::cout << bert << std::endl;
+		bert.decrementGrade();
+		bert.incrementGrade();
+		bert.incrementGrade();
+		std::cout << bert << std::endl;
+	}
 	return (0);
 }
