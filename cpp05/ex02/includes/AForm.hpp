@@ -30,10 +30,13 @@ public:
 	AForm			&operator=(const AForm &other);
 
 	void			beSigned(Bureaucrat &bureau);
+	void			checkRequirements(Bureaucrat const &executor) const;
 	virtual void	execute(Bureaucrat const &executor) const = 0;
+
 
 	std::string		getName(void) const;
 	bool			getIsSigned(void) const;
+	bool			getIsExecuted(void) const;
 	int				getSignGrade(void) const;
 	int				getExecGrade(void) const;
 
@@ -49,10 +52,15 @@ public:
 		const char	*what() const throw() { return ("AForm already signed"); }
 	};
 
+	class AFormNotSignedException : public std::exception {
+		const char	*what() const throw() { return ("AForm not signed"); }
+	};
+
 private:
 
 	const std::string	_name;
 	bool				_isSigned;
+	bool				_isExecuted;
 	const int			_signGrade;
 	const int			_execGrade;
 

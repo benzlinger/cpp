@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:47 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 14:06:03 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:33:13 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	Bureaucrat			&operator=(const Bureaucrat &other);
 
 	void				signAForm(AForm &Aform);
+	void				executeAForm(AForm &Aform);
 	void				incrementGrade(void);
 	void				decrementGrade(void);
 

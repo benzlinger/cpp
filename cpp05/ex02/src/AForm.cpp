@@ -13,13 +13,13 @@
 #include "../includes/AForm.hpp"
 
 AForm::AForm(void)
-: _name("Default"), _isSigned(false), _signGrade(50), _execGrade(25)
+: _name("Default"), _isSigned(false), _isExecuted(false), _signGrade(50), _execGrade(25)
 {
 	std::cout << "AForm default constructor called" << std::endl;
 }
 
 AForm::AForm(std::string name, int signGrade, int execGrade)
-: _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
+: _name(name), _isSigned(false), _isExecuted(false), _signGrade(signGrade), _execGrade(execGrade)
 {
 	std::cout << "AForm constructor called" << std::endl;
 	try {
@@ -33,7 +33,7 @@ AForm::AForm(std::string name, int signGrade, int execGrade)
 }
 
 AForm::AForm(const AForm &other) : _name(other.getName()), _isSigned(other.getIsSigned())
-, _signGrade(other.getSignGrade()), _execGrade(other.getExecGrade())
+, _isExecuted(other.getIsExecuted()), _signGrade(other.getSignGrade()), _execGrade(other.getExecGrade())
 {
 	std::cout << "AForm copy constructor called" << std::endl;
 }
@@ -66,6 +66,14 @@ void		AForm::beSigned(Bureaucrat &bureau)
 	
 }
 
+void		AForm::checkRequirements(Bureaucrat const &executor) const
+{
+	if (!getIsSigned())
+		throw AFormNotSignedException();
+	if (getExecGrade() < executor.getGrade())
+		throw GradeTooLowException();
+}
+
 std::string	AForm::getName(void) const
 {
 	return (_name);
@@ -74,6 +82,11 @@ std::string	AForm::getName(void) const
 bool		AForm::getIsSigned(void) const
 {
 	return (_isSigned);
+}
+
+bool		AForm::getIsExecuted(void) const
+{
+	return (_isExecuted);
 }
 
 int			AForm::getSignGrade(void) const
@@ -90,9 +103,9 @@ std::ostream	&operator<<(std::ostream &out, const AForm &Aform)
 {
 	out << "Name:                      " << Aform.getName() << "." << std::endl;
 	if (Aform.getIsSigned())
-		out << "AForm signed:               " << "Yes." << std::endl;
+		out << "AForm signed:              " << "Yes." << std::endl;
 	else
-		out << "AForm signed:               " << "No." << std::endl;
+		out << "AForm signed:              " << "No." << std::endl;
 	out << "Grade required to sign:    " << Aform.getSignGrade() << "." << std::endl;
 	out << "Grade required to execute: " << Aform.getExecGrade() << "." << std::endl;
 	return (out);
