@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:21:34 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 10:35:32 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:28:49 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 	std::cout << "Bureaucrat constructor called" << std::endl;
 	try {
-		_grade = grade;
 		if (grade < 1)
 			throw GradeTooHighException();
 		else if (grade > 150)
 			throw GradeTooLowException();
+		_grade = grade;
 	} catch (std::exception &e) {
+			_grade = 0;
 			std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 }
@@ -52,6 +53,8 @@ Bureaucrat		&Bureaucrat::operator=(const Bureaucrat &other)
 void			Bureaucrat::incrementGrade(void)
 {
 	try {
+		if (!_grade)
+			throw InvalidGradeException();
 		if (_grade - 1 < 1)
 			throw GradeTooHighException();
 		std::cout << getName() << ", grade incrementet from: " << getGrade()
@@ -66,6 +69,8 @@ void			Bureaucrat::incrementGrade(void)
 void			Bureaucrat::decrementGrade(void)
 {
 	try {
+		if (!_grade)
+			throw InvalidGradeException();
 		if (_grade + 1 > 150)
 			throw GradeTooLowException();
 		std::cout << getName() << ", grade decrementet from: " << getGrade()
