@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:24:14 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 17:29:28 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:13:43 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ Brain	&Brain::operator=(const Brain &other)
 		for (int i = 0; i < 100; i++)
 			_ideas[i] = other._ideas[i];
 	return (*this);
+}
+
+void	Brain::showIdeas(void)
+{
+	for (int i = 0; i < 100; i++)
+		std::cout << _ideas[i] << std::endl;
 }

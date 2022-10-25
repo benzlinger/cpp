@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:34:24 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 18:22:46 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:20:03 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ void	Dog::makeSound(void) const
 void	Dog::printBrainAddress(void)
 {
 	std::cout << "Address of Brain: " << &_brain << std::endl;
+}
+
+void	Dog::thinkOutLoud(void)
+{
+	_brain->showIdeas();
 }

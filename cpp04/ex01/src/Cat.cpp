@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:34:24 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 18:21:38 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:16:24 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ void	Cat::makeSound(void) const
 void	Cat::printBrainAddress(void)
 {
 	std::cout << "Address of Brain: " << &_brain << std::endl;
+}
+
+void	Cat::thinkOutLoud(void)
+{
+	_brain->showIdeas();
 }

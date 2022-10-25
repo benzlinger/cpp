@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:21:11 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 17:30:07 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:12:45 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ public:
 	~Brain(void);
 
 	Brain	&operator=(const Brain &other);
+
+	void	showIdeas(void);
 
 private:
 
