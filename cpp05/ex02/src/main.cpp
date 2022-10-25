@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:22 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 18:36:47 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:54:04 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	main(void)
 		bert.signAForm(form);
 		std::cout << std::endl << form << std::endl;
 		form.execute(bert);
+		std::cout << std::endl;
+		std::cout << badBert << std::endl;
 		std::cout << std::endl;
 		badBert.executeAForm(form);
 		std::cout << std::endl;
@@ -65,6 +67,8 @@ int	main(void)
 		bert.signAForm(form);
 		std::cout << std::endl << form << std::endl;
 		form.execute(bert);
+		std::cout << std::endl;
+		std::cout << badBert << std::endl;
 		std::cout << std::endl;
 		badBert.executeAForm(form);
 		std::cout << std::endl;

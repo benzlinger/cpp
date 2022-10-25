@@ -53,6 +53,7 @@ AForm		&AForm::operator=(const AForm &other)
 void		AForm::beSigned(Bureaucrat &bureau)
 {
 	try {
+		check_grades();
 		if (this->getIsSigned())
 			throw AFormAlreadySignedException();
 		if (bureau.getGrade() > this->getSignGrade())
@@ -99,6 +100,13 @@ int			AForm::getExecGrade(void) const
 	return (_execGrade);
 }
 
+void		AForm::check_grades(void) const
+{
+	if (this->getSignGrade() < 1 || this->getSignGrade() > 150
+		|| this->getExecGrade() < 1 || this->getExecGrade() > 150)
+		throw InvalidFormException();
+}
+
 std::ostream	&operator<<(std::ostream &out, const AForm &Aform)
 {
 	out << "Name:                      " << Aform.getName() << "." << std::endl;
@@ -109,4 +117,29 @@ std::ostream	&operator<<(std::ostream &out, const AForm &Aform)
 	out << "Grade required to sign:    " << Aform.getSignGrade() << "." << std::endl;
 	out << "Grade required to execute: " << Aform.getExecGrade() << "." << std::endl;
 	return (out);
+}
+
+const char* AForm::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* AForm::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
+}
+
+const char* AForm::AFormAlreadySignedException::what() const throw()
+{
+	return ("AForm already signed");
+}
+
+const char* AForm::AFormNotSignedException::what() const throw()
+{
+	return ("AForm not signed");
+}
+
+const char* AForm::InvalidFormException::what() const throw()
+{
+	return ("AForm invalid");
 }
