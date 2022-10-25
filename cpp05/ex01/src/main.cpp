@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:22 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 13:41:56 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:44:16 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(void)
 		Bureaucrat	bob("Bob", 150);
 		Form		form1("Form1", 65, 5);
 
-		std::cout << bob << std::endl;
+		std::cout << std::endl << bob << std::endl;
+		std::cout << std::endl;
 		std::cout << form1;
 		std::cout << std::endl;
 		form1.beSigned(bob);
@@ -36,11 +37,14 @@ int	main(void)
 		Form		form2("Form2", 30, 30);
 		Form		form3("Form3", 25, 10);
 
+		std::cout << std::endl << bella << std::endl;
 		std::cout << std::endl;
 		std::cout << form2;
+		std::cout << std::endl;
 		form2.beSigned(bella);
-		bella.decrementGrade();
+		std::cout << std::endl;
 		bella.signForm(form2);
+		std::cout << std::endl;
 		std::cout << form2;
 		std::cout << std::endl;
 		std::cout << form3;

@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:27:50 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 10:28:54 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:39:50 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,19 @@ public:
 	int			getExecGrade(void) const;
 
 	class GradeTooHighException : public std::exception {
-		const char	*what() const throw() { return ("Grade too high"); }
+		const char	*what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
-		const char	*what() const throw() { return ("Grade too low"); }
+		const char	*what() const throw();
 	};
 
 	class FormAlreadySignedException : public std::exception {
-		const char	*what() const throw() { return ("Form already signed"); }
+		const char	*what() const throw();
+	};
+
+	class InvalidFormException : public std::exception {
+		const char	*what() const throw();
 	};
 
 private:
@@ -54,6 +58,8 @@ private:
 	bool				_isSigned;
 	const int			_signGrade;
 	const int			_execGrade;
+
+	void				check_grades(void) const;
 
 };
 

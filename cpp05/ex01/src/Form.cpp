@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:34:18 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 10:28:31 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:44:47 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ Form		&Form::operator=(const Form &other)
 void		Form::beSigned(Bureaucrat &bureau)
 {
 	try {
+		check_grades();
 		if (this->getIsSigned())
 			throw FormAlreadySignedException();
 		if (bureau.getGrade() > this->getSignGrade())
@@ -86,6 +87,13 @@ int			Form::getExecGrade(void) const
 	return (_execGrade);
 }
 
+void		Form::check_grades(void) const
+{
+	if (this->getSignGrade() < 1 || this->getSignGrade() > 150
+		|| this->getExecGrade() < 1 || this->getExecGrade() > 150)
+		throw InvalidFormException();
+}
+
 std::ostream	&operator<<(std::ostream &out, const Form &form)
 {
 	out << "Name:                      " << form.getName() << "." << std::endl;
@@ -96,4 +104,24 @@ std::ostream	&operator<<(std::ostream &out, const Form &form)
 	out << "Grade required to sign:    " << form.getSignGrade() << "." << std::endl;
 	out << "Grade required to execute: " << form.getExecGrade() << "." << std::endl;
 	return (out);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
+}
+
+const char* Form::FormAlreadySignedException::what() const throw()
+{
+	return ("Form already signed");
+}
+
+const char* Form::InvalidFormException::what() const throw()
+{
+	return ("Form invalid");
 }
