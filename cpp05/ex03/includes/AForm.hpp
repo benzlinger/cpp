@@ -41,19 +41,23 @@ public:
 	int				getExecGrade(void) const;
 
 	class GradeTooHighException : public std::exception {
-		const char	*what() const throw() { return ("Grade too high"); }
+		const char	*what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
-		const char	*what() const throw() { return ("Grade too low"); }
+		const char	*what() const throw();
 	};
 
 	class AFormAlreadySignedException : public std::exception {
-		const char	*what() const throw() { return ("AForm already signed"); }
+		const char	*what() const throw();
 	};
 
 	class AFormNotSignedException : public std::exception {
-		const char	*what() const throw() { return ("AForm not signed"); }
+		const char	*what() const throw();
+	};
+
+	class InvalidFormException : public std::exception {
+		const char	*what() const throw();
 	};
 
 private:
@@ -63,6 +67,8 @@ private:
 	bool				_isExecuted;
 	const int			_signGrade;
 	const int			_execGrade;
+
+	void				check_grades(void) const;
 
 };
 

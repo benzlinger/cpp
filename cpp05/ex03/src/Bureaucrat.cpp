@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:21:34 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 18:28:09 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:57:15 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ void			Bureaucrat::signAForm(AForm &Aform)
 	Aform.beSigned(*this);
 	if (!Aform.getIsSigned())
 		std::cout << this->getName() << " couldn't sign " << Aform.getName()
-		<< " because their grade is too low." << std::endl;
+		<< " because their grade is too low or the form is invalid." << std::endl;
 }
 
-void			Bureaucrat::executeAForm(AForm &Aform)
+void			Bureaucrat::executeAForm(AForm const &Aform)
 {
 	Aform.execute(*this);
 	if (!Aform.getIsExecuted() && this->getGrade() > Aform.getExecGrade())
@@ -117,4 +117,19 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureau)
 {
 	out << bureau.getName() << ", bureaucrat grade: " << bureau.getGrade()  << ".";
 	return (out);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
+}
+
+const char* Bureaucrat::InvalidGradeException::what() const throw()
+{
+	return ("Bureaucrat invalid");
 }

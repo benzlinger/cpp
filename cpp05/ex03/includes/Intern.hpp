@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:43:25 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 19:24:21 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:02:14 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	AForm	*makeForm(std::string name, std::string target);
 
 	class IncorrectFormException : public std::exception {
-		const char	*what() const throw() { return ("Form name incorrect"); }
+		const char	*what() const throw();
 	};
 
 private:
@@ -40,6 +40,6 @@ private:
 
 };
 
-typedef	AForm	*(*constructorPtr)(const std::string);
+typedef	AForm	*(*functionPtr)(const std::string);
 
 #endif

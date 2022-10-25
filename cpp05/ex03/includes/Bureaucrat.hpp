@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:13:47 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 17:33:13 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:57:56 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	Bureaucrat			&operator=(const Bureaucrat &other);
 
 	void				signAForm(AForm &Aform);
-	void				executeAForm(AForm &Aform);
+	void				executeAForm(AForm const &Aform);
 	void				incrementGrade(void);
 	void				decrementGrade(void);
 
@@ -38,15 +38,15 @@ public:
 	int					getGrade(void) const;
 
 	class GradeTooHighException : public std::exception {
-		const char	*what() const throw() { return ("Grade too high"); }
+		const char	*what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
-		const char	*what() const throw() { return ("Grade too low"); }
+		const char	*what() const throw();
 	};
 
 	class InvalidGradeException : public std::exception {
-		const char	*what() const throw() { return ("Bureaucrat invalid"); }
+		const char	*what() const throw();
 	};
 
 private:

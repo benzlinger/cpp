@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:44:48 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/24 19:25:48 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:02:08 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,24 @@ int		Intern::get_constructor_index(std::string name)
 AForm	*Intern::makeForm(std::string name, std::string target)
 {
 	int	i = 0;
-	constructorPtr	forms[3] = {&pardon, &robotomy, &shrubbery};
+	functionPtr	forms[3] = {&pardon, &robotomy, &shrubbery};
 	AForm	*form = NULL;
 
 	try {
 		i = get_constructor_index(name);
-		form = forms[i](target);
+		if (i != -1)
+		{
+			form = forms[i](target);
+			std::cout << "Intern creates " << name << std::endl;
+		}
 	} catch (std::exception &e) {
+		std::cout << "Intern couldn't create " << name << std::endl;
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	return (form);
+}
+
+const char* Intern::IncorrectFormException::what() const throw()
+{
+	return ("Form name incorrect");
 }
