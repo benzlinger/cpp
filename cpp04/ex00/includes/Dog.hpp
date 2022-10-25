@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:42:57 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 16:22:22 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:22:22 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ public:
 	Dog(const Dog &other);
 	~Dog(void);
 
-	Dog				&operator=(const Dog &other);
+	Dog		&operator=(const Dog &other);
 
-	virtual void	makeSound(void) const;
+	void	makeSound(void) const;
 
 private:
 
