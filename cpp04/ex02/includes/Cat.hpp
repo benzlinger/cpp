@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:42:57 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/20 19:16:47 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:47:25 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ public:
 	Cat(const Cat &other);
 	~Cat(void);
 
-	Cat				&operator=(const Cat &other);
+	Cat		&operator=(const Cat &other);
 
-	virtual void	makeSound(void) const;
-	void			printBrainAddress(void);
+	void	makeSound(void) const;
+	void	printBrainAddress(void);
 
 private:
 
