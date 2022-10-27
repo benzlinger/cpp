@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:03:43 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/27 17:14:58 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:48:47 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,21 +58,17 @@ void	identify(Base &p)
 		Base	&a = dynamic_cast<A &>(p);
 		(void)a;
 		std::cout << "Identified class: A" << std::endl;
-	} catch (std::exception &e) {
-		try {
-			Base	&b = dynamic_cast<B &>(p);
-			(void)b;
-			std::cout << "Identified class: B" << std::endl;
-		} catch (std::exception &e) {
-			try {
-				Base	&c = dynamic_cast<C &>(p);
-				(void)c;
-				std::cout << "Identified class: C" << std::endl;
-			} catch (std::exception &e) {
-				std::cout << "Oops!" << std::endl;
-			}
-		}
-	}
+	} catch (std::exception &e) {}
+	try {
+		Base	&b = dynamic_cast<B &>(p);
+		(void)b;
+		std::cout << "Identified class: B" << std::endl;
+	} catch (std::exception &e) {}
+	try {
+		Base	&c = dynamic_cast<C &>(p);
+		(void)c;
+		std::cout << "Identified class: C" << std::endl;
+	} catch (std::exception &e) {}
 }
 
 int	main(void)

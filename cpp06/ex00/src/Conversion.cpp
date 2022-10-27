@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:48:30 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/27 14:14:56 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:08:11 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,14 +210,14 @@ void		Conversion::checkInput(char *input)
 		return ;
 	while (input[i] >= '0' && input[i] <= '9')
 		i++;
-	if (input[i] == '.')
+	if (input[i] == '.' && input[i + 1])
 	{
 		_isFrac = true;
 		i++;
 		while (input[i] >= '0' && input[i] <= '9')
 			i++;
 	}
-	if (input[i] == 'f' && !input[i + 1])
+	if (_isFrac && input[i] == 'f' && !input[i + 1])
 		_isFloat = true;
 	else if (_isFrac && !input[i])
 		_isDouble = true;
