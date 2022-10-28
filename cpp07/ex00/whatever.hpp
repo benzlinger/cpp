@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 10:34:15 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/28 11:14:21 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/28 11:20:25 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-template < typename T >
+template <typename T>
 void	swap(T &x,T &y)
 {
 	T	temp;
@@ -25,7 +25,7 @@ void	swap(T &x,T &y)
 	y = temp;
 }
 
-template < typename T >
+template <typename T>
 const T	&min(const T &x, const T &y)
 {
 	if (x < y)
@@ -33,7 +33,7 @@ const T	&min(const T &x, const T &y)
 	return (y);
 }
 
-template < typename T >
+template <typename T>
 const T	&max(const T &x, const T &y)
 {
 	if (x > y)
