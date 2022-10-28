@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:58:07 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/28 12:12:42 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:26:55 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ int	main(void)
 
 	std::cout << "Testing with char:" << std::endl;
 	iter(charArr, 5, printElement);
+	std::cout << std::endl;
+
+	int			*arr = NULL;
+
+	std::cout << "Testing with empty:" << std::endl;
+	iter(arr, 5, printElement);
 	std::cout << std::endl;
 
 	return (0);
