@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 19:11:48 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/31 20:42:38 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/31 21:33:33 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template<class T>
 class	MutantStack : public std::stack<T> {
 
 public:
-	typedef typename std::stack<T>::container_type::iterator  iterator;
+	typedef typename std::stack<T>::container_type::iterator 	iterator;
 
 	MutantStack(void) : std::stack<T>() {}
 	MutantStack(const MutantStack &other) : std::stack<T>(other) {}

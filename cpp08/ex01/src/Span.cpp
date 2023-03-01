@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:50:31 by btenzlin          #+#    #+#             */
-/*   Updated: 2022/10/31 18:59:56 by btenzlin         ###   ########.fr       */
+/*   Updated: 2022/10/31 21:30:07 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Span::Span(const Span &other)
 
 Span::~Span(void)
 {
-	
 }
 
 Span	&Span::operator=(const Span &other)
@@ -35,6 +34,7 @@ Span	&Span::operator=(const Span &other)
 	if (this != &other)
 	{
 		_size = other._size;
+		_amount_values = other._amount_values;
 		_vec.clear();
 		_vec = other._vec;
 	}
