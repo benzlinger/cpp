@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 11:10:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 16:51:07 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:28:29 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void							BitcoinExchange::calc_value(std::string date, float value)
 	if (it != data.end())
 		std::cout << date << " => " << value << " = " << (value * it->second) << std::endl;
 	else
-		std::cout << "Error: bad input => " << date << std::endl;
+		std::cout << "Error: bad input.\t\t=> " << date << std::endl;
 }
 
 std::map<std::string, float>	BitcoinExchange::get_data(void)
