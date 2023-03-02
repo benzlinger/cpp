@@ -6,11 +6,11 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 11:10:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 17:28:29 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:33:32 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "../includes/BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange(void) {}
 

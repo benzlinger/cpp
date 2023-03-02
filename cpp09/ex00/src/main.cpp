@@ -6,12 +6,11 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 14:50:01 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 17:27:53 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:33:36 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
-#include <utility>
+#include "../includes/BitcoinExchange.hpp"
 
 static void		exit_msg(std::string msg)
 {

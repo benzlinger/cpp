@@ -6,7 +6,7 @@
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/01 12:21:11 by btenzlin          #+#    #+#              #
-#    Updated: 2023/03/02 16:56:42 by btenzlin         ###   ########.fr        #
+#    Updated: 2023/03/02 17:33:55 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ X = "\033[0m"
 # EXECUTABLE
 NAME = ./btc
 # PATHS
-SRC_PATH = 
+SRC_PATH = ./src/
 OBJ_PATH = 
 # SOURCES
 SRC =	$(SRC_PATH)BitcoinExchange.cpp \

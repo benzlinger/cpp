@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 11:10:04 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 16:05:57 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:31:14 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <map>
 # include <sstream>
 # include <fstream>
-# include <string>
-# include <cstring>
 # include <iostream>
 
 class BitcoinExchange {
