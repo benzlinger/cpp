@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/01 12:21:11 by btenzlin          #+#    #+#              #
-#    Updated: 2023/03/02 17:37:16 by btenzlin         ###   ########.fr        #
+#    Created: 2023/03/02 17:52:43 by btenzlin          #+#    #+#              #
+#    Updated: 2023/03/02 18:17:35 by btenzlin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ G = "\033[32m"
 B = "\033[34m"
 X = "\033[0m"
 # EXECUTABLE
-NAME = ./btc
+NAME = ./RPN
 # PATHS
 SRC_PATH = ./src/
 OBJ_PATH = 
 # SOURCES
-SRC =	$(SRC_PATH)BitcoinExchange.cpp \
+SRC =	$(SRC_PATH)RPN.cpp \
 		$(SRC_PATH)main.cpp
 
 # OBJECTS
