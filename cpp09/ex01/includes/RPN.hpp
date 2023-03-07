@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:17:39 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/06 16:27:31 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:34:00 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <exception>
 
 # include <iostream>
+# include <algorithm>
 
 class RPN {
 
@@ -33,6 +34,7 @@ public:
 private:
 
 	bool				is_operand(char c);
+	bool				check_syntax(std::string expr);
 
 	std::stack<char>	ops;
 
