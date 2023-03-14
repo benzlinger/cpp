@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ben <ben@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 14:50:01 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 17:33:36 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:41:26 by ben              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int				main(int argc, char **argv)
 	if (!input.is_open())
 		exit_msg("Invalid file.");
 	buf << input.rdbuf();
-	BitcoinExchange				bit("test.csv");
+	BitcoinExchange				bit("data.csv");
 	while (std::getline(buf, line))
 	{
 		if (line.size() == 0)
