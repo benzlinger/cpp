@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 11:10:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/02 17:33:32 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:54:05 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ BitcoinExchange::BitcoinExchange(std::string path)
 	std::stringstream	buf;
 	std::string			row;
 	std::string			seq;
-	std::string			date;
+	int					date;
 	float				value;
 
 	if (!csv.is_open())
@@ -36,14 +36,23 @@ BitcoinExchange::BitcoinExchange(std::string path)
 		while (std::getline(s, seq, ','))
 		{
 			if (i == 0)
-				date = seq;
+			{
+				seq.erase(remove(seq.begin(), seq.end(), '-'), seq.end());
+				date = std::atoi(seq.c_str());
+			}
 			else if (i == 1)
 				value = std::atof(seq.c_str());
 			i++;
 		}
-		data.insert(std::pair<std::string, float> (date, value));
+		data.insert(std::pair<int, float> (date, value));
 	}
+	// for (std::map<int, float>::iterator it = data.begin(); it != data.end(); it++)
+	// {
+	// 	std::cout << "Key: " << it->first << "	Value: " << it->second << std::endl;
+	// }
+	// std::cout << "--------------------------------------" << std::endl;
 }
+
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) { *this = other; }
 
 BitcoinExchange::~BitcoinExchange(void) {}
@@ -55,18 +64,25 @@ BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &other)
 	return (*this);
 }
 
-void							BitcoinExchange::calc_value(std::string date, float value)
+void							BitcoinExchange::calc_value(std::string date, int num_date, float value)
 {
-	std::map<std::string, float>::iterator	it;
+	std::map<int, float>::iterator	it;
 
-	it = data.find(date);
-	if (it != data.end())
-		std::cout << date << " => " << value << " = " << (value * it->second) << std::endl;
-	else
-		std::cout << "Error: bad input.\t\t=> " << date << std::endl;
+	while (num_date <= 20220329 && num_date >= 20090102)
+	{
+		it = data.find(num_date);
+		if (it != data.end())
+		{
+			std::cout << date << " => " << value << " = " << (value * it->second) << std::endl;
+			return ;
+		}
+		else
+			num_date--;
+	}
+	std::cout << "Error: bad input => " << date << std::endl;
 }
 
-std::map<std::string, float>	BitcoinExchange::get_data(void)
+std::map<int, float>	BitcoinExchange::get_data(void)
 {
 	return (data);
 }
