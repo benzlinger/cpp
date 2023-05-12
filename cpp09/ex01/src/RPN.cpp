@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:18:54 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/07 11:59:48 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/12 22:28:02 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ RPN		&RPN::operator=(const RPN &other)
 	return (*this);
 }
 
-int	RPN::calculate(void)
+float	RPN::calculate(void)
 {
 	char c = ops.top();
 	ops.pop();
 	if (is_operand(c))
 	{
-		int num2 = calculate();
-		int num1 = calculate();
+		float num2 = calculate();
+		float num1 = calculate();
 		if (c == '+')
 			return (num1 + num2);
 		else if (c == '-')
