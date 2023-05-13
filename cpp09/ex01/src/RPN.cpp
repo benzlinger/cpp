@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:18:54 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/13 12:21:27 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:28:17 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ RPN::RPN(std::string expr)
 	expr.erase(std::remove(expr.begin(), expr.end(), ' '), expr.end());
 	for (size_t i = 0; i < expr.size(); i++)
 	{
-		if (isdigit(expr[i]))
+		if (std::isdigit(expr[i]))
 		{
 			ops.push(expr[i]);
 			nums++;
@@ -103,7 +103,7 @@ bool	RPN::check_syntax(std::string expr)
 			break ;
 	if (pos == expr.size())
 		return (true);
-	if (!isdigit(expr[0]) || !isdigit(expr[1]))
+	if (!std::isdigit(expr[0]) || !std::isdigit(expr[1]))
 		return (false);
 	return (true);
 }

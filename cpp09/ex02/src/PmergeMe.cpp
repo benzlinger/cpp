@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:24:55 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/12 22:07:53 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:43:32 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ PmergeMe::PmergeMe(char **nums, int size)
 	for (int i = 1; i < size; i++)
 	{
 		int val = atoi(nums[i]);
-		if (std::find(_nums_vec.begin(), _nums_vec.end(), val) != _nums_vec.end())
-		{
-			std::cerr << "Error: No duplicates." << std::endl;
-			exit(1);
-		}
+		// if (std::find(_nums_vec.begin(), _nums_vec.end(), val) != _nums_vec.end())
+		// {
+		// 	std::cerr << "Error: No duplicates." << std::endl;
+		// 	exit(1);
+		// }
 		_nums_vec.push_back(val);
 		_nums_deque.push_back(val);
 		_original_sequence = _nums_vec;
@@ -94,14 +94,19 @@ void				PmergeMe::binary_search_insert(std::deque<int> &S, int elem)
 			S.insert(m, 1, elem);
 			return ;
 		}
-		else if (elem < *l)
+		else if (elem <= *l)
 		{
 			S.insert(l, elem);
 			return ;
 		}
-		else if (elem > *r)
+		else if (elem >= *r)
 		{
 			S.push_back(elem);
+			return ;
+		}
+		else if (elem == *m)
+		{
+			S.insert(m, 1, elem);
 			return ;
 		}
 		else if (elem > *m)
@@ -220,14 +225,19 @@ void				PmergeMe::binary_search_insert(std::vector<int> &S, int elem)
 			S.insert(m, 1, elem);
 			return ;
 		}
-		else if (elem < *l)
+		else if (elem <= *l)
 		{
 			S.insert(l, elem);
 			return ;
 		}
-		else if (elem > *r)
+		else if (elem >= *r)
 		{
 			S.push_back(elem);
+			return ;
+		}
+		else if (elem == *m)
+		{
+			S.insert(m, 1, elem);
 			return ;
 		}
 		else if (elem > *m)
