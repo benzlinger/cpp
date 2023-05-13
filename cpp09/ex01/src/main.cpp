@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:20:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/03/06 16:32:51 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:11:04 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		exit_msg("Invalid arguments. [usage: ./RPN \"math expression\"]");
 	try {
 		RPN	jan(argv[1]);
-		std::cout << jan.calculate() << std::endl;
+		jan.exec_rpn();
 	} catch (std::exception &e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}

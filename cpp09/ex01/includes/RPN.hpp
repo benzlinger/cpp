@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:17:39 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/12 22:27:53 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:09:19 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ public:
 
 	RPN					&operator=(const RPN &other);
 
-	float				calculate(void);
+	void				exec_rpn(void);
 
 private:
 
+	float				calculate(void);
 	bool				is_operand(char c);
 	bool				check_syntax(std::string expr);
 

@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:18:54 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/12 22:28:02 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:21:27 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,16 @@ RPN		&RPN::operator=(const RPN &other)
 	return (*this);
 }
 
+void	RPN::exec_rpn(void)
+{
+	float	num = calculate();
+
+	if (ops.size())
+		throw std::invalid_argument("Invalid syntax.");
+	else
+		std::cout << num << std::endl;
+}
+
 float	RPN::calculate(void)
 {
 	char c = ops.top();
@@ -84,6 +94,7 @@ bool	RPN::check_syntax(std::string expr)
 {
 	size_t	pos;
 
+	// std::cout << expr << std::endl;
 	for (pos = 0; pos < expr.size(); pos++)
 		if (is_operand(expr[pos]))
 			break ;
@@ -92,12 +103,7 @@ bool	RPN::check_syntax(std::string expr)
 			break ;
 	if (pos == expr.size())
 		return (true);
-	if (!isdigit(expr[0]) || !isdigit(expr[1]) || !is_operand(expr[2]))
+	if (!isdigit(expr[0]) || !isdigit(expr[1]))
 		return (false);
-	for (size_t i = 3; i < expr.size() - 1; i++)
-	{
-		if (isdigit(expr[i]) && !is_operand(expr[i + 1]))
-			return (false);
-	}
 	return (true);
 }
