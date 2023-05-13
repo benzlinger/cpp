@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:25:08 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/12 22:06:27 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:35:33 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	PmergeMe	&operator=(const PmergeMe &other);
 
 	std::vector<int>	sort_vec(void);
-	std::deque<int>	sort_deque(void);
+	std::deque<int>		sort_deque(void);
 
 	std::vector<int>	get_original(void);
 
