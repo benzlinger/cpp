@@ -6,7 +6,7 @@
 /*   By: btenzlin <btenzlin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 11:10:00 by btenzlin          #+#    #+#             */
-/*   Updated: 2023/05/12 13:54:05 by btenzlin         ###   ########.fr       */
+/*   Updated: 2023/05/13 11:27:17 by btenzlin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ BitcoinExchange::BitcoinExchange(std::string path)
 		}
 		data.insert(std::pair<int, float> (date, value));
 	}
-	// for (std::map<int, float>::iterator it = data.begin(); it != data.end(); it++)
-	// {
-	// 	std::cout << "Key: " << it->first << "	Value: " << it->second << std::endl;
-	// }
-	// std::cout << "--------------------------------------" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) { *this = other; }
